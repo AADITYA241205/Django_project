@@ -12,7 +12,17 @@
     <div class="nav-center">
         ⚡ Expense Tracker
     </div>
+
+    {% if user.is_authenticated %}
+    <div class="nav-right">
+        <form action="/logout/" method="post">
+            {% csrf_token %}
+            <button class="btn btn-logout btn-sm">Logout</button>
+        </form>
+    </div>
+    {% endif %}
 </div>
+
 
 
     <!-- PAGE CONTENT -->

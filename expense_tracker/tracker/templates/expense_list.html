@@ -3,43 +3,56 @@
 {% block content %}
 <div class="container">
 
-    <h2>Expense List</h2>
-    <h3>Total Spending: ₹{{ total }}</h3>
+    <!-- HEADER -->
+    <div class="dashboard-header">
+        <h2>Expense Dashboard</h2>
+        <div class="total-box">
+            Total Spending
+            <span>₹{{ total }}</span>
+        </div>
+    </div>
 
-    <table>
-        <tr>
-            <th>Amount</th>
-            <th>Category</th>
-            <th>Date</th>
-            <th>Note</th>
-            <th>Action</th>
-        </tr>
+    <!-- EXPENSE LIST -->
+    <div class="expense-section">
 
+    {% if expenses %}
         {% for expense in expenses %}
-        <tr>
-            <td>₹{{ expense.amount }}</td>
-            <td>{{ expense.category }}</td>
-            <td>{{ expense.date }}</td>
-            <td>{{ expense.note }}</td>
-            <td>
-                <a href="/delete/{{ expense.id }}/" class="btn btn-delete">Delete</a>
-            </td>
-        </tr>
-        {% empty %}
-        <tr>
-            <td colspan="5">No expenses added yet.</td>
-        </tr>
+            <div class="expense-card">
+
+                <div class="expense-top">
+                    <span class="expense-amount">₹{{ expense.amount }}</span>
+
+                    <a href="/delete/{{ expense.id }}/" class="btn btn-delete btn-sm">
+                        Delete
+                    </a>
+                </div>
+
+                <div class="expense-meta">
+                    <span>{{ expense.category }}</span>
+                    <span>•</span>
+                    <span>{{ expense.date }}</span>
+                </div>
+
+                {% if expense.note %}
+                    <div class="expense-note">
+                        {{ expense.note }}
+                    </div>
+                {% endif %}
+
+            </div>
         {% endfor %}
-    </table>
+    {% else %}
+        <p class="empty-text">No expenses added yet.</p>
+    {% endif %}
 
-    <br>
+</div>
 
-    <a href="/add/" class="btn btn-login">➕ Add Expense</a>
 
-    <form action="/logout/" method="post" style="margin-top:12px;">
-        {% csrf_token %}
-        <button class="btn btn-logout">Logout</button>
-    </form>
+    <div class="action-group">
+    <a href="/add/" class="btn btn-login btn-full">Add Expense</a>
+
+</div>
+
 
 </div>
 {% endblock %}
