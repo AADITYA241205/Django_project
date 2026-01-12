@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <h2>Expense List</h2>
+    <h3>Total Spending: ₹{{ total }}</h3>
+
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+
+        {% for expense in expenses %}
+        <tr>
+            <td>₹{{ expense.amount }}</td>
+            <td>{{ expense.category }}</td>
+            <td>{{ expense.date }}</td>
+            <td>{{ expense.note }}</td>
+            <td>
+                <a href="/delete/{{ expense.id }}/" class="btn btn-delete">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No expenses added yet.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <a href="/add/" class="btn btn-login">➕ Add Expense</a>
+
+    <form action="/logout/" method="post" style="margin-top:12px;">
+        {% csrf_token %}
+        <button class="btn btn-logout">Logout</button>
+    </form>
+
+</div>
+{% endblock %}

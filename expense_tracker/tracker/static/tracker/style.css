@@ -1,0 +1,159 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f2027, #000000);
+    color: #e0e0e0;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background: #121212;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.nav-center {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00e5ff;
+    letter-spacing: 1px;
+}
+
+
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #00e5ff;
+}
+
+/* PAGE WRAPPER */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+}
+
+
+/* CARD / CONTAINER */
+.container {
+    background: rgba(20, 20, 20, 0.95);
+    width: 420px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,229,255,0.15);
+}
+
+/* HEADINGS */
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #00e5ff;
+}
+
+/* TEXT */
+h3 {
+    margin: 10px 0;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #00e5ff;
+    color: #000;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    background: #1f1f1f;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 6px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-login {
+    background: linear-gradient(135deg, #2196f3, #00e5ff);
+    color: #000;
+}
+
+.btn-signup {
+    background: linear-gradient(135deg, #00c853, #64ffda);
+    color: #000;
+}
+
+.btn-delete {
+    background: linear-gradient(135deg, #ff1744, #ff616f);
+    color: #000;
+}
+
+.btn-logout {
+    background: #ff1744;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* LOGOUT FORM */
+.logout-form {
+    display: inline;
+}
+
+.btn-back {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid #00e5ff;
+    color: #00e5ff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn-back:hover {
+    background: #00e5ff;
+    color: #000;
+}
